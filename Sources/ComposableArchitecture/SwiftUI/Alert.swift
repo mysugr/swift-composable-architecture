@@ -157,6 +157,7 @@ public struct AlertState<Action> {
   }
 }
 
+@available(iOS 13.0, *)
 extension View {
   /// Displays an alert when then store's state becomes non-`nil`, and dismisses it when it becomes
   /// `nil`.
@@ -192,6 +193,7 @@ extension AlertState: Identifiable where Action: Hashable {
   public var id: Self { self }
 }
 
+@available(iOS 13.0, *)
 extension AlertState.Button {
   func toSwiftUI(send: @escaping (Action) -> Void) -> SwiftUI.Alert.Button {
     let action = { if let action = self.action { send(action) } }
@@ -208,6 +210,7 @@ extension AlertState.Button {
   }
 }
 
+@available(iOS 13.0, *)
 extension AlertState {
   fileprivate func toSwiftUI(send: @escaping (Action) -> Void) -> SwiftUI.Alert {
     let title = Text(self.title)

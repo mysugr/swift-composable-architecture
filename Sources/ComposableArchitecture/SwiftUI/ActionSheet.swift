@@ -145,6 +145,7 @@ extension ActionSheetState: Identifiable where Action: Hashable {
   public var id: Self { self }
 }
 
+@available(iOS 13.0, *)
 extension View {
   /// Displays an action sheet when the store's state becomes non-`nil`, and dismisses it when it
   /// becomes `nil`.
