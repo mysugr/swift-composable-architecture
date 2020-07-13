@@ -2,6 +2,7 @@ import Combine
 import ComposableArchitecture
 import CoreLocation
 
+@available(iOS 13.0, *)
 extension LocationManager {
 
   /// The live implementation of the `LocationManager` interface. This implementation is capable of
@@ -130,14 +131,17 @@ extension LocationManager {
   }()
 }
 
+@available(iOS 13.0, *)
 private struct Dependencies {
   let delegate: LocationManagerDelegate
   let manager: CLLocationManager
   let subscriber: Effect<LocationManager.Action, Never>.Subscriber
 }
 
+@available(iOS 13.0, *)
 private var dependencies: [AnyHashable: Dependencies] = [:]
 
+@available(iOS 13.0, *)
 private class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
   let subscriber: Effect<LocationManager.Action, Never>.Subscriber
 

@@ -185,6 +185,7 @@ extension DispatchQueue: CustomDebugOutputConvertible {
   }
 }
 
+@available(iOS 13.0, *)
 extension Effect: CustomDebugOutputConvertible {
   public var debugOutput: String {
     var empty: Any?
