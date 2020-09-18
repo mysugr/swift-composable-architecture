@@ -5,6 +5,7 @@ import CoreLocation
 @available(macOS, unavailable)
 @available(tvOS, unavailable)
 @available(watchOS, unavailable)
+
 @available(iOS 13.0, *)
 public struct Beacon: Equatable {
   public let rawValue: CLBeacon?
@@ -46,15 +47,5 @@ public struct Beacon: Equatable {
     self.rssi = rssi
     self.timestamp = timestamp
     self.uuid = uuid
-  }
-
-  public static func == (lhs: Self, rhs: Self) -> Bool {
-    return lhs.accuracy == rhs.accuracy
-      && lhs.major == rhs.major
-      && lhs.minor == rhs.minor
-      && lhs.proximity == rhs.proximity
-      && lhs.rssi == rhs.rssi
-      && lhs.timestamp == rhs.timestamp
-      && lhs.uuid == rhs.uuid
   }
 }
